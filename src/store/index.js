@@ -1,10 +1,12 @@
 import { createStore } from 'vuex';
-import Question from './modules/question';
+import question from './modules/question';
 import products from './modules/products';
+import modal from './modules/modal';
 
 export default createStore({
   modules: {
-    Question,
+    question,
     products,
+    modal,
   },
 });

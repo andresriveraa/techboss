@@ -4,9 +4,9 @@
     :alt="product.name"
     width="80"></figure>
     <h4>{{product.name}}</h4>
-    <div class="btn">
-      <a :href="product.url" target="_blank">Ver</a>
-    </div>
+    <a :href="product.url" target="_blank" class="btn--main">
+      Ver
+    </a>
   </div>
 </template>
 

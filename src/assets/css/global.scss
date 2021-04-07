@@ -60,9 +60,17 @@ a:hover {
   padding: 16px;
   margin: 8px;
   border-radius: 10px;
-  background-color: var(--accent);
   text-align: center;
   transition: 500ms;
+  background-color: var(--accent);
+
+  &--main {
+    @extend .btn;
+  }
+  &--second {
+    @extend .btn;
+    background-color: var(--headforms);
+  }
 }
 
 .btn:hover {

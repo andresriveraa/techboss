@@ -1,26 +1,28 @@
 <template>
   <div class="home">
-    <transition name="slide-fade">
-      <router-view/>
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="slide-fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
+  <module-success/>
 </template>
 
 <script>
-// @ is an alias to /src
-// import Products from '@/components/Products.vue';
+import ModuleSuccess from '../components/ModuleSuccess.vue';
 
 export default {
   name: 'Home',
   components: {
-    // Products,
+    ModuleSuccess,
   },
 };
 </script>
 
 <style lang="scss" >
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 1s ease-out;
 }
 
 .slide-fade-leave-active {
@@ -29,6 +31,7 @@ export default {
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
+  transition: all 0.2s ease-out;
   transform: translateX(20px);
   opacity: 0;
 }

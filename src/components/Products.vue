@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="add">
-      <div class="btn">
-        <router-link to="/support">Añadir material de apoyo</router-link>
-      </div>
+      <router-link class="btn" to="/support">
+          Añadir material de apoyo
+      </router-link>
     </div>
     <h1>Nuestros Productos</h1>
     <div class="products grid-3">
