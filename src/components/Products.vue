@@ -19,6 +19,9 @@ import CardProduct from '@/components/CardProduct.vue';
 import { mapState } from 'vuex';
 
 export default {
+  created() {
+    this.$store.dispatch('question/getData', 'hello');
+  },
   components: {
     CardProduct,
   },
