@@ -1,6 +1,10 @@
+import ModuleSuccess from '@/components/ModuleSuccess.vue';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
 
-createApp(App).use(store).use(router).mount('#app');
+const Global = createApp(App);
+Global.use(store).use(router).mount('#app');
+
+Global.component(ModuleSuccess);
