@@ -1,18 +1,23 @@
+import datos from './data.json';
+
 export default {
   namespaced: true,
   state: {
     hello: 'world',
+    questionList: [],
   },
   mutations: {
     setData(state, payload) {
-      state.questionList = payload;
+      state.questionList.push(payload);
+    },
+    clearData(state) {
+      state.questionList = [];
     },
   },
   actions: {
-    async getData({ commit }, payload) {
-      commit('setData', payload);
-      await fetch('../../assets/data.json')
-        .then((res) => console.log(res));
+    getData({ commit }) {
+      commit('clearData');
+      datos.map((question) => commit('setData', question));
     },
   },
 };
